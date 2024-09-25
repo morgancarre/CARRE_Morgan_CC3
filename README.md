@@ -40,3 +40,25 @@
             }
         }
 
+
+    Question 1.6 indiquer ce que cette commande a modifié dans votre projet.
+
+        Ces commandes ont installés 2 packaages : cross-env et nodemon. cross-env qui aide à gérer les variables d'environnement sous Windows, et nodemon refresh automatiquement le serveur lorsque des fichiers sont changés.
+
+    Question 1.7 Quelles sont les différences entre les scripts http-dev et http-prod ?
+
+        Avec http-dev, le serveur est lancé à l'aide de nodemon ce qui fait une mise à jour automatique à chaque modification de fichier (avec la commande console.log("NODE_ENV =", process.env.NODE_ENV); qui s'affiche dès qu'on ajoute dans notre fichier : server-http.mjs et qu'on l'enregistre).http-prod démarre le serveur de manière classique sans actualisation automatique, ça permet la mise en service du serveur.
+
+
+    Question 1.8 donner les codes HTTP reçus par votre navigateur pour chacune des quatre pages précédent
+
+        localhost:8000/index.html:200
+
+        localhost:8000/random.html:200
+
+        localhost:8000/:404
+        
+        localhost:8000/dont-exist:404
+
+    
+

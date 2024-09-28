@@ -60,5 +60,50 @@
         
         localhost:8000/dont-exist:404
 
-    
+    Question 2.1 Donner les URL des documentations de chacun des modules installés par la commande précédente.
+        loglevel : https://www.npmjs.com/package/loglevel 
+        morgan : https://www.npmjs.com/package/morgan
+        Express.js : https://expressjs.com/en/4x/api.html 
+        http-errors : https://www.npmjs.com/package/http-errors 
 
+    Question 2.2 Vérifier que les trois routes fonctionnent.
+        Les trois routes fonctionnent correctement. Les routes / et /index.html présentent le contenu du fichier index.html, tandis que la route /random/:nb renvoie nb nombres aléatoires.
+
+    Question 2.3 Lister les en-têtes des réponses fournies par Express. Lesquelles sont nouvelles par rapport au serveur HTTP ?
+        Routes / et /index.html :
+
+        Accept-Ranges: bytes
+        Cache-Control: public, max-age=0
+        Connection: keep-alive
+        Content-Length: 903
+        Content-Type: text/html; charset=UTF-8
+        Date: Sat, 28 Sep 2024 18:45:34 GMT
+        Etag: W/"39-bb0851422df09"
+        Keep-Alive: timeout=5
+        Last-Modified: Sat, 28 Sep 2024 17:52:40 GMT
+        X-Powered-By: Express
+
+        Route /random/nb :
+
+        Connection: keep-alive
+        Content-Length: 45
+        Content-Type: text/html; charset=utf-8
+        Date: WSat, 28 Sep 2024 18:47:20 GMT
+        Etag: W/"f362950ddd46ec6dd41f30b184b2139d"
+        Keep-Alive: timeout=5
+        X-Powered-By: Express
+
+        Les nouveautés sont : l'apparition de "Etag" et de "X-Powered-By: Express"
+
+    Question 2.4 Quand l'événement listening est-il déclenché ?
+        L'événement "listening" se produit lorsque le serveur Express.js commence à écouter sur le port spécifié et est prêt à recevoir des requêtes HTTP.
+
+    Question 2.5 Indiquer quelle est l'option (activée par défaut) qui redirige / vers /index.html ?
+        La propriété index : 
+        app.use(express.static("static", {index:false}));
+
+    Question 2.6 Visiter la page d'accueil puis rafraichir (Ctrl+R) et ensuite forcer le rafraichissement (Ctrl+Shift+R). Quels sont les codes HTTP sur le fichier style.css ? Justifier.
+        En effectuant un Ctrl+R, on reçoit un code HTTP 304, indiquant que la page n'a pas changé par rapport à la version en cache. En revanche, en utilisant Ctrl+Shift+R, on obtient un code HTTP 200, car ça rafraîchit la page en ignorant le cache.
+
+    Question 2.7 Vérifier que l'affichage change bien entre le mode production et le mode development.
+        L'affichage diffère : en mode développement, l'erreur est entièrement visible tandis qu'en mode production elle est masquée.
